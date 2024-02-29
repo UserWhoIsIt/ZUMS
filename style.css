@@ -3,9 +3,11 @@ body {
   background-color: #355C7D; 
   color: #F67280;
   font-family: 'Times New Roman', Times, serif;
+  margin: 0%;
 }
 
-#game-container{
+#game-container, #menu-container, #level-container{
+  position: center;
   border: 3px solid ;
   margin: 20px;
   display: flex;
@@ -15,6 +17,17 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
+
+}
+.container{
+    /* important part */
+    display: grid;
+    place-items: center;
+    grid-template-areas: "inner-div";
+}
+.inner {
+  /* important part */
+  grid-area: inner-div;
 }
 
 #cell-continer{
@@ -26,8 +39,6 @@ body {
   border: 3px solid ;
   align-items: center;
 }
-
-
 .cell {
   margin: 15px;
   width: 100px;
@@ -51,7 +62,6 @@ body {
 
   align-items: center;
 }
-
 #plus-button, #minus-button, #divide-button, #multiply-button{
   background-color: #6C5B7B;
   border: 3px solid #F67280;
@@ -62,18 +72,55 @@ body {
   width: 100px;
   height: 100px;
 }
-
-#text-field{
+#text-field1, #text-field2, #result-field{
   background-color: #6C5B7B;
   border: 3px solid #F67280;
   margin: 5px;
   font-size: 50px;
   font: bold;
   color: #F67280;
-  width: 300px;
+  min-width: 300px;
   height: 50px;
 }
 
+.btn-menu{
+  background-color: #6C5B7B;
+  border: 7px solid #F67280;
+  margin: 5px;
+  font-size: 60px;
+  font: bold;
+  color: #F67280;
+  width: 500px;
+  height: 100px;
+}
+.btn-menu:active{
+  margin-left: 1px 1px 0;
+  box-shadow: -1px -1px 1px #000;
+  outline: 1px solid #000000;
+  -moz-outline-radius: 7px;
+  background-color: #7c1923;
+  color: #a6222f;
+}
+.btn-level{
+  margin: 15px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  color: #F67280;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 90px;
+  background-color: #6C5B7B;
+  border: 3px solid;
+  cursor: pointer;
+}
+.btn-level:active{
+  margin-left: 1px 1px 0;
+  box-shadow: -1px -1px 1px #000;
+  outline: 1px solid #000000;
+  -moz-outline-radius: 7px;
+  background-color: #7c1923;
+  color: #a6222f;
+}
 
 #btnControl {
   display: none;
@@ -91,12 +138,13 @@ body {
   cursor: pointer;
 }
 
+
 .btn:active {
   margin-left: 1px 1px 0;
   box-shadow: -1px -1px 1px #000;
   outline: 1px solid #000000;
   -moz-outline-radius: 7px;
-  background-color: #302936;
+  background-color: #7c1923;
   color: #a6222f;
 }
 #btnControl:checked + label {
