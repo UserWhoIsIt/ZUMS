@@ -7,34 +7,77 @@
     <title>ZUMS</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload = "restartGame()">
-  <div id = "game-container">
+<body onload = "setVisibility(0)">
+<div class="container">
+  <div id = "menu-container" class="inner">
+    <h1>MENU</h1>
+    <div class="btn-menu" onclick="selectLevel()">
+      Start Game
+    </div>
+    <div class="btn-menu" onclick="settingsMenu()">
+      Settings
+    </div>
+    <div class="btn-menu" onclick="exit()">
+      Exit Game
+    </div>
+  </div>
+
+  <div id = "game-container" class="inner">
     <h1>ZUMS</h1>
     <div id ="cell-continer">
-      <div cell_index ="0" class ="btn" for="btnControl" onclick="textFunc(1)">
+      <div cell_index ="0" id="btn1" class ="btn" for="btnControl"  onclick="textFunc(1)" >
         <label id="num1">?</label>
       </div> 
-      <div cell_index ="1" class ="btn" for="btnControl" onclick="textFunc(2)">
+      <div cell_index ="1" id="btn2" class ="btn" for="btnControl" onclick="textFunc(2)">
         <label id="num2">?</label>
       </div> 
-      <div cell_index ="2" class ="btn" for="btnControl" onclick="textFunc(3)">
+      <div cell_index ="2" id="btn3" class ="btn" for="btnControl" onclick="textFunc(3)">
         <label id="num3">?</label>
       </div> 
-      <div cell_index ="3" class ="btn" for="btnControl" onclick="textFunc(4)">
+      <div cell_index ="3" id="btn4" class ="btn" for="btnControl" onclick="textFunc(4)">
         <label id="num4">?</label>
       </div> 
     </div>
     <div id ="button-container">
-      <button id="plus-button">+</button>
-      <button id="minus-button">-</button>
-      <button id="divide-button">/</button>
-      <button id="multiply-button">x</button> 
+      <button id="plus-button" onclick="doOp('+')">+</button>
+      <button id="minus-button" onclick="doOp('-')">-</button>
+      <button id="divide-button" onclick="doOp('/')">/</button>
+      <button id="multiply-button" onclick="doOp('*')">x</button> 
     </div> 
-    <div id="text-field">
-      <label for="text-field">TEXT_FIELD</label>
+
+    <div id="text-field1">
+      <label for="text-field1">TF1</label>
     </div>
+
+    <div id="text-field2">
+      <label for="text-field2">TF2</label>
+    </div>
+    <div id="result-field">
+      <label for="result-field">RESULT</label>
+    </div>
+
+
     <button id="restart-button" onclick="restartGame()">RESTART GAME</button>
-  <script src = "js/game.js"></script>
   </div>
+
+  <div id = "level-container" class="inner">
+    <h1>LEVEL SELECT</h1>
+    <div class ="btn-level" onclick="loadLevel(4)" >
+      <label>4</label>
+    </div> 
+    <div class ="btn-level" onclick="loadLevel(6)" >
+      <label>6</label>
+    </div>  
+    <div class ="btn-level" onclick="loadLevel(8)" >
+      <label>8</label>
+    </div> 
+    <div class ="btn-level" onclick="loadLevel(10)" >
+      <label>10</label>
+    </div>  
+  </div>
+
+  <button onclick="setVisibility(0)">GO BACK</button>
+  <script src = "js/game.js"></script>
+</div>
 </body>
 </html>
